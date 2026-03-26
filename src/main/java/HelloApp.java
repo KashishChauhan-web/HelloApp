@@ -8,16 +8,15 @@ public class HelloApp {
             return;
         }
 
-        // Using StringBuilder
-        StringBuilder names = new StringBuilder();
+        StringBuilder nameBuilder = new StringBuilder();
 
         // Enhanced for loop
         for (String name : args) {
-            names.append(name).append(", ");
+            nameBuilder.append(name).append(", ");
         }
 
-        // Remove last comma and space
-        names.setLength(names.length() - 2);
+        // Remove last ", " using substring
+        String names = nameBuilder.substring(0, nameBuilder.length() - 2);
 
         // Final output
         System.out.println("Hello, " + names + "!");

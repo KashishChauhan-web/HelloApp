@@ -2,19 +2,24 @@ public class HelloApp {
 
     public static void main(String[] args) {
 
-        String message;
-
-        // Check if arguments are provided
-        if (args.length > 0) {
-            // Join all names with comma and space
-            String names = String.join(", ", args);
-            message = "Hello, " + names + "!";
-        } else {
-            // Default case
-            message = "Hello, World!";
+        // Default case
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+            return;
         }
 
-        // Display output
-        System.out.println(message);
+        // Using StringBuilder
+        StringBuilder names = new StringBuilder();
+
+        // Enhanced for loop
+        for (String name : args) {
+            names.append(name).append(", ");
+        }
+
+        // Remove last comma and space
+        names.setLength(names.length() - 2);
+
+        // Final output
+        System.out.println("Hello, " + names + "!");
     }
 }
